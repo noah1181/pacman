@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+            background-color: yellow;
+        }
+        canvas{
+            background-color: black;
+        }
+        
+
+    </style>
+</head>
+<body>
+
+
+<canvas id="myCanvas" width="1400" height="500"></canvas>
+
+<script>
+const c = document.getElementById("myCanvas");
+const pacman = c.getContext("2d");
+pacman.fillStyle = 'yellow';
+pacman.beginPath();
+pacman.arc(250, 250, 200, 0, 2 * Math.PI);
+pacman.fill();
+
+const triangle = c.getContext("2d");
+
+triangle.fillStyle = 'black';
+
+triangle.beginPath();
+    triangle.moveTo(285, 250);
+    triangle.lineTo(500, 200);
+
+
+    triangle.lineTo(400, 400);
+
+
+    triangle.lineTo(400, 400);
+
+
+    triangle.fill();
+    triangle.closePath();
+
+    
+const pacmaneye = c.getContext("2d");
+pacmaneye.fillStyle = 'black';
+pacmaneye.beginPath();
+pacmaneye.arc(220, 200, 10, 0, 2 * Math.PI);
+pacmaneye.closePath();
+pacmaneye.fill();
+
+
+
+
+const ghost = c.getContext("2d");
+ghost.fillStyle = 'blue';
+ghost.beginPath();
+ghost.arc(600, 300, 120, 2.9, 2 * Math.PI);
+ghost.fill();
+ghost.closePath();
+const rectangleGhost = c.getContext("2d");
+
+rectangleGhost.beginPath();
+rectangleGhost.fillStyle = 'blue'
+rectangleGhost.rect(480, 285, 240, 100);
+rectangleGhost.fill();
+rectangleGhost.closePath();
+
+
+
+const ghost1 = c.getContext("2d");
+ghost1.beginPath();
+
+ghost1.fillStyle = 'blue';
+ghost1.arc(520, 385, 40, 0, 1 * Math.PI);
+
+ghost1.rotate(Math.PI / 180);
+
+ghost1.fill();
+ghost1.closePath();
+
+const ghost2 = c.getContext("2d");
+ghost2.beginPath();
+
+ghost2.fillStyle = 'blue';
+ghost2.arc(600, 373, 40, 0, 1 * Math.PI);
+
+ghost2.rotate(Math.PI / 180);
+
+ghost2.fill();
+ghost2.closePath();
+
+const ghost3 = c.getContext("2d");
+ghost3.beginPath();
+
+ghost3.fillStyle = 'blue';
+ghost3.arc(688, 360, 45, 0, 1 * Math.PI);
+
+//ghost3.rotate(Math.PI / 180);
+
+ghost3.fill();
+ghost3.closePath();
+
+const ghosteye = c.getContext("2d");
+ghosteye.fillStyle = 'white';
+ghosteye.beginPath();
+ghosteye.arc(570, 225, 25, 0, 2 * Math.PI);
+ghosteye.closePath();
+ghosteye.fill();
+
+const ghosteye1 = c.getContext("2d");
+ghosteye1.fillStyle = 'white';
+ghosteye1.beginPath();
+ghosteye1.arc(650, 220, 25, 0, 2 * Math.PI);
+ghosteye1.closePath();
+ghosteye1.fill();
+
+const ghostblackeye = c.getContext("2d");
+ghostblackeye.fillStyle = 'black';
+ghostblackeye.beginPath();
+ghostblackeye.arc(570, 225, 10, 0, 2 * Math.PI);
+ghostblackeye.closePath();
+ghostblackeye.fill();
+
+const ghostblackeye1 = c.getContext("2d");
+ghostblackeye1.fillStyle = 'black';
+ghostblackeye1.beginPath();
+ghostblackeye1.arc(650, 220, 10, 0, 2 * Math.PI);
+ghostblackeye1.closePath();
+ghostblackeye1.fill();
+
+
+
+
+////////////////////
+
+
+
+const ghostagain = c.getContext("2d");
+ghostagain.fillStyle = 'red';
+ghostagain.beginPath();
+ghostagain.arc(900, 260, 120, 2.9, 2 * Math.PI);
+ghostagain.fill();
+ghostagain.closePath();
+const rectangleGhostagain = c.getContext("2d");
+
+rectangleGhostagain.beginPath();
+rectangleGhostagain.fillStyle = 'red'
+rectangleGhostagain.rect(780, 250, 240, 100);
+rectangleGhostagain.fill();
+rectangleGhostagain.closePath();
+
+
+
+const ghost1again = c.getContext("2d");
+ghost1again.beginPath();
+
+ghost1again.fillStyle = 'red';
+ghost1again.arc(820, 345, 40, 0, 1 * Math.PI);
+
+ghost1again.rotate(Math.PI / 180);
+
+ghost1again.fill();
+ghost1again.closePath();
+
+const ghost2again = c.getContext("2d");
+ghost2again.beginPath();
+
+ghost2again.fillStyle = 'red';
+ghost2again.arc(905, 333, 40, 0, 1 * Math.PI);
+
+
+ghost2again.fill();
+ghost2again.closePath();
+
+const ghost3again = c.getContext("2d");
+ghost3again.beginPath();
+
+ghost3.fillStyle = 'red';
+ghost3again.arc(981, 325, 45, 0, 1 * Math.PI);
+
+ghost3again.rotate(Math.PI / 180);
+
+ghost3again.fill();
+ghost3again.closePath();
+
+const ghosteyeagain = c.getContext("2d");
+ghosteyeagain.fillStyle = 'white';
+ghosteyeagain.beginPath();
+ghosteye.arc(870, 175, 25, 0, 2 * Math.PI);
+ghosteyeagain.closePath();
+ghosteyeagain.fill();
+
+const ghosteye1again = c.getContext("2d");
+ghosteye1again.fillStyle = 'white';
+ghosteye1again.beginPath();
+ghosteye1again.arc(950, 170, 25, 0, 2 * Math.PI);
+ghosteye1again.closePath();
+ghosteye1again.fill();
+
+const ghostblackeyeagain = c.getContext("2d");
+ghostblackeyeagain.fillStyle = 'black';
+ghostblackeyeagain.beginPath();
+ghostblackeyeagain.arc(870, 175, 10, 0, 2 * Math.PI);
+ghostblackeyeagain.closePath();
+ghostblackeyeagain.fill();
+
+const ghostblackeye1again = c.getContext("2d");
+ghostblackeye1again.fillStyle = 'black';
+ghostblackeye1.beginPath();
+ghostblackeye1again.arc(950, 170, 10, 0, 2 * Math.PI);
+ghostblackeye1again.closePath();
+ghostblackeye1again.fill();
+
+
+///////////////////////////
+
+
+
+
+const ghostagainYellow = c.getContext("2d");
+ghostagainYellow.fillStyle = 'yellow';
+ghostagainYellow.beginPath();
+ghostagainYellow.arc(1200, 225, 120, 2.9, 2 * Math.PI);
+ghostagainYellow.fill();
+ghostagainYellow.closePath();
+
+
+const rectangleGhostagainYellow = c.getContext("2d");
+
+rectangleGhostagainYellow.beginPath();
+rectangleGhostagainYellow.fillStyle = 'yellow'
+rectangleGhostagainYellow.rect(1080, 225, 240, 80);
+rectangleGhostagainYellow.fill();
+rectangleGhostagainYellow.closePath();
+
+
+
+const ghost1againYellow = c.getContext("2d");
+ghost1againYellow.beginPath();
+
+ghost1againYellow.fillStyle = 'yellow';
+ghost1againYellow.arc(1120, 300, 40, 0, 1 * Math.PI);
+
+
+ghost1againYellow.fill();
+ghost1again.closePath();
+
+const ghost2againYellow = c.getContext("2d");
+ghost2againYellow.beginPath();
+
+ghost2againYellow.fillStyle = 'yellow';
+ghost2againYellow.arc(1195, 300, 40, 0, 1 * Math.PI);
+
+ghost2againYellow.rotate(Math.PI / 180);
+
+ghost2againYellow.fill();
+ghost2againYellow.closePath();
+
+const ghost3againYellow = c.getContext("2d");
+ghost3againYellow.beginPath();
+
+ghost3againYellow.fillStyle = 'yellow';
+ghost3againYellow.arc(1276, 272, 50, 0, 1 * Math.PI);
+
+ghost3againYellow.rotate(Math.PI / 180);
+
+ghost3againYellow.fill();
+ghost3againYellow.closePath();
+
+const ghosteyeagainYellow = c.getContext("2d");
+ghosteyeagainYellow.fillStyle = 'white';
+ghosteyeagainYellow.beginPath();
+ghosteyeagainYellow.arc(1170, 140, 25, 0, 2 * Math.PI);
+ghosteyeagainYellow.closePath();
+ghosteyeagainYellow.fill();
+
+const ghosteye1againYellow = c.getContext("2d");
+ghosteye1againYellow.fillStyle = 'white';
+ghosteye1againYellow.beginPath();
+ghosteye1againYellow.arc(1250, 135, 25, 0, 2 * Math.PI);
+ghosteye1againYellow.closePath();
+ghosteye1againYellow.fill();
+
+const ghostblackeyeagainYellow = c.getContext("2d");
+ghostblackeyeagainYellow.fillStyle = 'black';
+ghostblackeyeagainYellow.beginPath();
+ghostblackeyeagainYellow.arc(1170, 140, 10, 0, 2 * Math.PI);
+ghostblackeyeagainYellow.closePath();
+ghostblackeyeagainYellow.fill();
+
+const ghostblackeye1againYellow = c.getContext("2d");
+ghostblackeye1againYellow.fillStyle = 'black';
+ghostblackeye1againYellow.beginPath();
+ghostblackeye1againYellow.arc(1250, 135, 10, 0, 2 * Math.PI);
+ghostblackeye1againYellow.closePath();
+ghostblackeye1againYellow.fill();
+
+</script> 
+
+</body>
+</html>
